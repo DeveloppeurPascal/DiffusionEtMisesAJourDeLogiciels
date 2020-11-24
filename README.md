@@ -1,7 +1,7 @@
 # Diffuser nos logiciels et gérer leurs mises à jour
 Sources et exemples du webinaire "diffuser nos logiciels et gérer leurs mises à jour" du 24 novembre 2020
 
-Pour avoir le détail, des liens complémentaires, voir et télécharger la présentation, rendez-vous sur le blog à l'adresse ()[https://developpeur-pascal.fr/p/___00m-webinaire-du-24-novembre-2020-diffuser-nos-logiciels-et-gerer-leurs-mises-a-jour.html]
+Pour avoir le détail, des liens complémentaires, voir et télécharger la présentation, rendez-vous sur le blog à l'adresse https://developpeur-pascal.fr/p/___00m-webinaire-du-24-novembre-2020-diffuser-nos-logiciels-et-gerer-leurs-mises-a-jour.html
 
 -----
 
