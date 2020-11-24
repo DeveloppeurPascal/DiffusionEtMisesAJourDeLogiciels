@@ -1,0 +1,48 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{5B14A9B5-596C-4BAE-9A9B-103C5B081245}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="RandomApp\RandomApp.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="ReleaseServer\ReleaseServer.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="RandomApp">
+        <MSBuild Projects="RandomApp\RandomApp.dproj"/>
+    </Target>
+    <Target Name="RandomApp:Clean">
+        <MSBuild Projects="RandomApp\RandomApp.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="RandomApp:Make">
+        <MSBuild Projects="RandomApp\RandomApp.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="ReleaseServer">
+        <MSBuild Projects="ReleaseServer\ReleaseServer.dproj"/>
+    </Target>
+    <Target Name="ReleaseServer:Clean">
+        <MSBuild Projects="ReleaseServer\ReleaseServer.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="ReleaseServer:Make">
+        <MSBuild Projects="ReleaseServer\ReleaseServer.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="RandomApp;ReleaseServer"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="RandomApp:Clean;ReleaseServer:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="RandomApp:Make;ReleaseServer:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>
