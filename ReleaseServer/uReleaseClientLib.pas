@@ -86,6 +86,7 @@ end;
 
 class function TReleaseClientLib.getPlateformeName: string;
 begin
+// See compiler directives at https://docwiki.embarcadero.com/RADStudio/en/Conditional_compilation_(Delphi)
 {$IF Defined(ANDROID32)}
   result := 'Android32';
 {$ELSEIF Defined(ANDROID64)}
@@ -94,11 +95,17 @@ begin
   result := 'iOS32';
 {$ELSEIF Defined(IOS64)}
   result := 'iOS64';
+{$ELSEIF Defined(LINUX32)}
+  result := 'Linux32';
 {$ELSEIF Defined(LINUX64)}
   result := 'Linux64';
 {$ELSEIF Defined(MACOS32)}
   result := 'macOS32';
+{$ELSEIF Defined(MACOS64) and Defined(CPUARM)}
+// Mac with Apple Silicon processor
+  result := 'macOSARM64';
 {$ELSEIF Defined(MACOS64)}
+// Mac with Intel processor
   result := 'macOS64';
 {$ELSEIF Defined(WIN32)}
   result := 'Win32';
